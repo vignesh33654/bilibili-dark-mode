@@ -9,10 +9,7 @@ html.dark-birdeye {
 }
 
 /* Invert images and videos back to their original colors */
-html.dark-birdeye img {
-    color: #ffffff;
-    
-}
+html.dark-birdeye img,
 html.dark-birdeye video {
   filter: invert(1) hue-rotate(180deg);
 }
@@ -30,5 +27,8 @@ html.dark-birdeye .sidebar {
 html.dark-birdeye .main-content {
   color: #e0e0e0;
 }
+html.dark-birdeye s {
+    color: #ffffff;
+  }
 
 /* Add more custom styles as needed */
