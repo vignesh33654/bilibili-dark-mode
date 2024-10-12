@@ -32,7 +32,7 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://app.birdeye.com/*"
+      "https://*.bilibili.com/*"
     ]
   }
 }

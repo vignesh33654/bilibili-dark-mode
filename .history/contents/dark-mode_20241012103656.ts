@@ -1,5 +1,3 @@
-// contents/dark-mode.ts
-
 import { Storage } from '@plasmohq/storage'
 import type { PlasmoCSConfig } from 'plasmo'
 
@@ -15,8 +13,6 @@ export const getStyle = () => {
   style.textContent = cssText
   return style
 }
-
-// Rest of your existing code...
 
 // Check if the current page should be skipped (if Birdeye has built-in dark pages)
 const isSkippedPage = () => {
@@ -81,3 +77,5 @@ chrome.runtime.onMessage.addListener(function (request) {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
   loadDarkMode()
 })
+
+Now, let's create the CSS file for dark mode styles:

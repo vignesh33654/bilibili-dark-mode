@@ -1,3 +1,6 @@
+First, let's create a new file called `dark-mode.css` in your `contents` folder:
+
+// contents/dark-mode.css
 
 :root {
   --primary-invert-amount: 0.9;
@@ -14,6 +17,10 @@ html.dark-birdeye video {
   filter: invert(1) hue-rotate(180deg);
 }
 
+/* Add more specific styles for Birdeye elements here */
+html.dark-birdeye .some-specific-class {
+  /* Add custom styles */
+}
 
 /* You can add more specific styles for Birdeye's UI elements here */
 html.dark-birdeye .header {

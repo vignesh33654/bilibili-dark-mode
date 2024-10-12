@@ -1,18 +1,22 @@
 import React from 'react'
 import { useStorage } from '@plasmohq/storage/hook'
+
 import '@radix-ui/themes/styles.css'
 import './index.css'
-import { Container, Text, Flex, Heading, SegmentedControl, Theme, Card } from '@radix-ui/themes'
+import { Container, Text, Flex, Heading, SegmentedControl, Theme, Link, Card } from '@radix-ui/themes'
 
 function IndexPopup() {
-  const [darkBirdeyeToggle] = useStorage<boolean>('darkBirdeyeToggle')
-  const [darkBirdeyeMode, setDarkBirdeyeMode] = useStorage<string>('darkBirdeyeMode')
+  // for legacy config
+  const [darkBiliToggle] = useStorage<boolean>('darkBiliToggle')
+
+  // new config
+  const [darkBiliMode, setDarkBiliMode] = useStorage<string>('darkBiliMode')
 
   const modeChanged = function (mode: string) {
-    setDarkBirdeyeMode(mode)
+    setDarkBiliMode(mode)
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { darkBirdeyeMode: mode })
+      chrome.tabs.sendMessage(tabs[0].id, { darkBiliMode: mode })
     })
   }
 
@@ -20,10 +24,10 @@ function IndexPopup() {
     <Theme appearance="dark">
       <Container p="3" style={{ width: '280px', backgroundColor: 'var(--gray-a2)' }}>
         <Heading size="4" align="center">
-          Birdeye Dark Mode
+          DarkBili
         </Heading>
         <Text as="p" align="center" size="1" color="gray" my="3">
-          Perfered method
+          Choose your mode
         </Text>
         <Card>
           <Flex my="2" justify="center">
@@ -32,12 +36,12 @@ function IndexPopup() {
                 <SegmentedControl.Root
                   size="1"
                   value={
-                    darkBirdeyeMode || (typeof darkBirdeyeToggle === 'undefined' ? 'dark' : darkBirdeyeToggle ? 'dark' : 'light')
+                    darkBiliMode || (typeof darkBiliToggle === 'undefined' ? 'dark' : darkBiliToggle ? 'dark' : 'light')
                   }
                   onValueChange={(value) => modeChanged(value)}>
-                  <SegmentedControl.Item value="dark">Dark</SegmentedControl.Item>
-                  <SegmentedControl.Item value="light">Light</SegmentedControl.Item>
-                  <SegmentedControl.Item value="system">System</SegmentedControl.Item>
+                  <SegmentedControl.Item value="dark"> auto </SegmentedControl.Item>
+                  <SegmentedControl.Item value="light">light</SegmentedControl.Item>
+                  <SegmentedControl.Item value="system">dark</SegmentedControl.Item>
                 </SegmentedControl.Root>
               </Flex>
             </Text>

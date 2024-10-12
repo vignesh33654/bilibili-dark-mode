@@ -23,7 +23,7 @@ function IndexPopup() {
           Birdeye Dark Mode
         </Heading>
         <Text as="p" align="center" size="1" color="gray" my="3">
-          Perfered method
+          Choose your preferred mode
         </Text>
         <Card>
           <Flex my="2" justify="center">

@@ -1,5 +1,3 @@
-// contents/dark-mode.ts
-
 import { Storage } from '@plasmohq/storage'
 import type { PlasmoCSConfig } from 'plasmo'
 
@@ -8,15 +6,34 @@ export const config: PlasmoCSConfig = {
   run_at: 'document_start'
 }
 
-import cssText from './dark-mode.css'
+const cssText = 
+
+:root {
+  --primary-invert-amount: 0.9;
+}
+
+/* Apply dark mode to all elements */
+html.dark-birdeye {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(180deg);
+}
+
+/* Invert images and videos back to their original colors */
+html.dark-birdeye img,
+html.dark-birdeye video {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Add more specific styles for Birdeye elements here */
+html.dark-birdeye .some-specific-class {
+  /* Add custom styles */
+}
+
 
 export const getStyle = () => {
   const style = document.createElement('style')
   style.textContent = cssText
   return style
 }
-
-// Rest of your existing code...
 
 // Check if the current page should be skipped (if Birdeye has built-in dark pages)
 const isSkippedPage = () => {
