@@ -20,10 +20,10 @@ function IndexPopup() {
     <Theme appearance="dark">
       <Container p="3" style={{ width: '280px', backgroundColor: 'var(--gray-a2)' }}>
         <Heading size="4" align="center">
-          Dark mode
+          Birdeye Dark Mode
         </Heading>
         <Text as="p" align="center" size="1" color="gray" my="3">
-          Perfered method for Birdeye
+          Perfered birdeye
         </Text>
         <Card>
           <Flex my="2" justify="center">

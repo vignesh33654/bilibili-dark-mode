@@ -2,8 +2,8 @@
   "name": "birdeye",
   "displayName": "Birdeye-darkmode",
   "version": "0.2.4",
-  "description": "Dark mode / night mode for birdeye.com",
-  "author": "Vignesh",
+  "description": "Dark mode / night mode for bilibili.co",
+  "author": "fzhichao",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build"
