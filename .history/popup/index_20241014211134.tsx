@@ -23,7 +23,7 @@ function IndexPopup() {
           Dark mode
         </Heading>
         <Text as="p" align="center" size="1" color="gray" my="3">
-          Perfered method
+          Perfered method for Birdeye
         </Text>
         <Card>
           <Flex my="2" justify="center">
@@ -35,7 +35,7 @@ function IndexPopup() {
                     darkBirdeyeMode || (typeof darkBirdeyeToggle === 'undefined' ? 'dark' : darkBirdeyeToggle ? 'dark' : 'light')
                   }
                   onValueChange={(value) => modeChanged(value)}>
-                  <SegmentedControl.Item value="dark">Dark</SegmentedControl.Item>
+                  <SegmentedControl.Item value="dark">Dar</SegmentedControl.Item>
                   <SegmentedControl.Item value="light">Light</SegmentedControl.Item>
                   <SegmentedControl.Item value="system">System</SegmentedControl.Item>
                 </SegmentedControl.Root>
